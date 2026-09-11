@@ -2,7 +2,8 @@
 # Monthly refresh: pull the latest HTTP Archive figures, commit if they changed, redeploy.
 # Runs on the Mac mini (launchd com.chrisrimmer.wordpress-bet-refresh); needs the login keychain
 # for netlify and the ssh-agent for git, so it is not for headless SSH.
-set -euo pipefail
+set -eo pipefail
+: "${NETLIFY_SITE_ID:?NETLIFY_SITE_ID not set}"
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin
 cd "$(dirname "$0")/.."
 git pull -q --ff-only || true
