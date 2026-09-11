@@ -79,7 +79,7 @@
   <p class="terms" id="termsline"></p>
   <p class="terms"><b>The stake.</b> A round of beers, Iain included.</p>
   <span class="pill">⏳ <b id="days">—</b> days until the deciding figure (the <b id="decideLabel">—</b> crawl, read on <b id="decideDate">—</b>)</span>
-  <span class="pill warn" id="status"></span>
+  <span class="pill" id="status"></span>
 
   <div class="grid">
     <div class="card">
@@ -136,7 +136,7 @@ const BET = {
   decideDate:    "2027-09-11",    // when the two of them read it
   danWinsAbove:  -1.0,            // Dan wins if the fall from baseline is under 1.0 point
   chrisWinsBelow:-2.0,            // Chris wins if the fall is more than 2.0 points; between = draw
-  status: "Terms proposed by Chris on 11 September 2026, re-based to the August 2026 crawl. Awaiting Dan's agreement.",
+  status: "Terms agreed by Dan and Chris on 11 September 2026.",
 };
 const API = "https://cdn.httparchive.org/v1/adoption?geo=ALL&rank=ALL&start=2019-01-01&end=2099-01-01&technology=";
 const fmtM = d => new Date(d).toLocaleDateString("en-GB", { month: "long", year: "numeric" });

@@ -1,5 +1,9 @@
 # History (newest first)
 
+## 2026-09-11: terms agreed
+Dan agreed the re-based terms the same afternoon; status pill changed from "awaiting Dan" to
+"agreed" and redeployed.
+
 ## 2026-09-11: created
 Bet struck on a Granola call and on WhatsApp on 11 September 2026; Chris emailed data and proposed terms; Dan
 replied with bands around the April 2026 figure. The session found the measure both had quoted (HTTP Archive,
