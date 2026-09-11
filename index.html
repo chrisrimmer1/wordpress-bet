@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The WordPress Bet: Dan vs Chris</title>
+<meta name="description" content="Is WordPress's share of the web falling faster? Dan Wood and Chris Rimmer bet a round of beers on it. Tracked monthly from HTTP Archive data.">
+<style>
+  :root { --bg:#0b0e14; --card:#131824; --card2:#1a2130; --line:#232c3f;
+          --ink:#e8ecf4; --muted:#8b96ab; --accent:#ffd94a; --red:#ff5d5d; --green:#39d98a; --blue:#6aa6ff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink);
+         max-width:980px; margin:0 auto; padding:34px 18px 60px; line-height:1.5; }
+  h1 { font-size:26px; letter-spacing:.3px; }
+  h1 span { color:var(--accent); }
+  .terms { color:var(--muted); font-size:14.5px; margin:8px 0 4px; max-width:62em; }
+  .terms b { color:var(--ink); }
+  .pill { display:inline-block; margin:10px 8px 22px 0; padding:6px 14px; border-radius:999px; background:var(--card2);
+          border:1px solid var(--line); font-size:13.5px; color:var(--muted); }
+  .pill b { color:var(--accent); }
+  .pill.warn { border-color:#6b512a; background:#3a2b12; color:#f0c987; }
+  .grid { display:grid; grid-template-columns:2fr 3fr; gap:14px; }
+  @media (max-width:720px) { .grid { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
+  .card h2 { font-size:13px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:4px; }
+  .tag { font-size:11.5px; color:var(--accent); letter-spacing:.06em; }
+  .bignum { font-size:52px; font-weight:700; line-height:1.1; margin:6px 0 2px; font-variant-numeric:tabular-nums; }
+  .sub { color:var(--muted); font-size:13.5px; }
+  .sub b { color:var(--ink); font-weight:600; }
+  .row { display:flex; gap:26px; margin-top:14px; flex-wrap:wrap; }
+  .kv .k { font-size:12px; color:var(--muted); }
+  .kv .v { font-size:17px; font-weight:600; }
+  .kv .v small { color:var(--muted); font-weight:400; font-size:12px; }
+  .argument { font-size:13.5px; color:var(--muted); margin-top:12px; border-left:3px solid var(--accent); padding-left:12px; }
+  .argument.dan { border-color:var(--blue); }
+
+  /* the scale: where today's figure sits between the two win lines */
+  .scale { position:relative; height:14px; border-radius:999px; margin:18px 0 6px; overflow:hidden; display:flex; }
+  .scale .seg { height:100%; }
+  .scale .seg.chris { background:#5a2a2a; } .scale .seg.draw { background:#3b3f2a; } .scale .seg.dan { background:#22354f; }
+  .marker { position:absolute; top:-4px; width:4px; height:22px; background:var(--accent); border-radius:2px; transform:translateX(-2px); }
+  .scalelabels { display:flex; justify-content:space-between; font-size:11.5px; color:var(--muted); }
+  .scalelabels .chris { color:var(--red); } .scalelabels .dan { color:var(--blue); }
+
+  .chartcard { margin-top:14px; }
+  .chartwrap { position:relative; margin:12px 0 4px; }
+  svg text { font-family:inherit; }
+  .tip { position:absolute; pointer-events:none; display:none; background:#0b0e14; border:1px solid var(--line); border-radius:8px;
+         padding:6px 10px; font-size:12.5px; color:var(--ink); white-space:nowrap; }
+  .tip b { color:var(--accent); }
+  .legend { display:flex; gap:18px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin-top:6px; }
+  .legend i { display:inline-block; width:14px; height:3px; vertical-align:middle; margin-right:6px; border-radius:2px; }
+
+  .tiles { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px; }
+  @media (max-width:720px) { .tiles { grid-template-columns:1fr; } }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .tile .nm { font-weight:700; font-size:14px; }
+  .tile .cap { font-size:24px; font-weight:700; margin:6px 0 1px; font-variant-numeric:tabular-nums; }
+  .tile .pk { font-size:12px; color:var(--muted); }
+
+  details { margin-top:14px; color:var(--muted); font-size:13px; }
+  summary { cursor:pointer; color:var(--ink); }
+  table { border-collapse:collapse; margin-top:10px; font-variant-numeric:tabular-nums; font-size:12.5px; }
+  th, td { padding:4px 12px 4px 0; text-align:right; border-bottom:1px solid var(--line); }
+  th:first-child, td:first-child { text-align:left; }
+  footer { margin-top:34px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:12.5px; }
+  footer p { margin:6px 0; }
+  a { color:var(--blue); }
+</style>
+</head>
+<body>
+  <h1>The <span>WordPress Bet</span>: Dan vs Chris</h1>
+  <p class="terms"><b>The claim.</b> Chris says WordPress is the Encyclopaedia Britannica of the web: AI-native tools will overtake it, and its
+     share of the web will fall faster from here. Dan, who has built WordPress sites for 12 years, says the decline levels off: WordPress
+     stays the professional's tool, and AI plugs into it rather than replacing it.</p>
+  <p class="terms"><b>The measure.</b> WordPress's share of the websites real Chrome users visit: WordPress origins as a percentage of all origins in
+     the Chrome UX Report (mobile), published monthly by <a href="https://httparchive.org/reports/techreport/tech?tech=WordPress">HTTP Archive</a>.
+     Unvisited AI-generated junk does not count, which is why both sides accepted it.</p>
+  <p class="terms" id="termsline"></p>
+  <p class="terms"><b>The stake.</b> A round of beers, Iain included.</p>
+  <span class="pill">⏳ <b id="days">—</b> days until the deciding figure (the <b id="decideLabel">—</b> crawl, read on <b id="decideDate">—</b>)</span>
+  <span class="pill warn" id="status"></span>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Where it stands today</h2>
+      <div class="tag" id="latestTag">LATEST MONTHLY FIGURE</div>
+      <div class="bignum" id="nowV">—</div>
+      <div class="sub">Change since the baseline: <b id="delta">—</b> · baseline <b id="baseV">—</b> (<b id="baseM">—</b>)</div>
+      <div class="scale" id="scale"></div>
+      <div class="scalelabels"><span class="chris" id="lblChris">—</span><span>draw</span><span class="dan" id="lblDan">—</span></div>
+      <p class="sub" id="verdict" style="margin-top:10px"></p>
+    </div>
+    <div class="card">
+      <h2>The two arguments</h2>
+      <p class="argument"><b>Chris.</b> Legacy platforms carry compatibility weight they cannot shed. A new entrant with none of it will build something
+         more AI-aligned, fix the SEO plumbing, and leave the old tools behind. From now on the share goes down every year.</p>
+      <p class="argument dan"><b>Dan.</b> The fall so far is Wix, Squarespace and Shopify, not AI. AI-generated sites still cannot produce proper sitemaps,
+         schema or consistent SEO, so serious businesses keep coming back to professionals, and professionals build on WordPress with AI alongside it.</p>
+      <div class="row">
+        <div class="kv"><div class="k">Peak</div><div class="v" id="peakV">—</div></div>
+        <div class="kv"><div class="k">Fall in the 12 months before the bet</div><div class="v" id="priorFall">—</div></div>
+        <div class="kv"><div class="k">Fall needed for Chris to win</div><div class="v" id="needChris">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card chartcard">
+    <h2>WordPress share of CrUX origins, mobile, monthly</h2>
+    <div class="chartwrap"><div id="chart"></div><div class="tip" id="tip"></div></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>WordPress share</span><span><i style="background:var(--red)"></i>Chris wins below</span><span><i style="background:var(--blue)"></i>Dan wins above</span></div>
+    <details><summary>The numbers as a table</summary><div style="overflow-x:auto"><table id="tbl"></table></div></details>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><div class="nm">For interest: W3Techs, all websites</div><div class="cap">40.3%</div><div class="pk">11 September 2026 · peak 43.6% on 1 January 2025. Counts sites whether or not anyone visits them. Read again on 11 September 2027.</div></div>
+    <div class="tile"><div class="nm">For interest: W3Techs, sites with a known CMS</div><div class="cap">58.8%</div><div class="pk">11 September 2026 · peak 65.2% on 1 January 2022. Flatters WordPress when AI-built static sites show up as "no CMS".</div></div>
+    <div class="tile"><div class="nm">Desktop, same measure</div><div class="cap" id="deskV">—</div><div class="pk" id="deskSub">HTTP Archive desktop crawl, for comparison. The bet is decided on mobile.</div></div>
+  </div>
+
+  <footer>
+    <p><b>Method.</b> Share = WordPress origins ÷ all origins, mobile, all ranks, all countries, from the HTTP Archive Technology Report API
+       (<code>cdn.httparchive.org/v1/adoption</code>). HTTP Archive crawls the origins in the Chrome UX Report once a month and detects
+       technologies with Wappalyzer. The page fetches the live series on every load and falls back to the snapshot committed in the repo
+       (<span id="snapDate">—</span>). Each monthly figure is published a few weeks into the following month.</p>
+    <p><b>The record.</b> Struck on a call on 11 September 2026 and on WhatsApp the same morning. The bet began as "will the share go up or down",
+       until Chris found that it had already been falling since July 2022, so the two of them bet on the rate instead.
+       Companion to the <a href="https://the-real-bubble-bet.netlify.app/">Bubble Bet</a>, Karim vs Chris.</p>
+  </footer>
+
+<script>
+// ---- the terms (edit here and redeploy) --------------------------------------
+const BET = {
+  baselineMonth: "2026-08-01",    // the latest crawl available when the bet was struck
+  decideMonth:   "2027-08-01",    // the crawl that decides it
+  decideDate:    "2027-09-11",    // when the two of them read it
+  danWinsAbove:  -1.0,            // Dan wins if the fall from baseline is under 1.0 point
+  chrisWinsBelow:-2.0,            // Chris wins if the fall is more than 2.0 points; between = draw
+  status: "Terms proposed by Chris on 11 September 2026, re-based to the August 2026 crawl. Awaiting Dan's agreement.",
+};
+const API = "https://cdn.httparchive.org/v1/adoption?geo=ALL&rank=ALL&start=2019-01-01&end=2099-01-01&technology=";
+const fmtM = d => new Date(d).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+const fmtD = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+const pct = v => v.toFixed(2) + "%";
+const pts = v => (v > 0 ? "+" : "") + v.toFixed(2) + " pts";
+const $ = id => document.getElementById(id);
+
+async function getSeries() {
+  try {
+    const [wp, all] = await Promise.all([API + "WordPress", API + "ALL"].map(u => fetch(u).then(r => { if (!r.ok) throw 0; return r.json(); })));
+    const A = Object.fromEntries(all.map(r => [r.date, r.adoption]));
+    const months = wp.filter(r => A[r.date] && A[r.date].mobile).map(r => ({
+      month: r.date, share_mobile: +(r.adoption.mobile / A[r.date].mobile * 100).toFixed(2),
+      share_desktop: +(r.adoption.desktop / A[r.date].desktop * 100).toFixed(2),
+      wp_mobile: r.adoption.mobile, all_mobile: A[r.date].mobile }));
+    return { months, live: true };
+  } catch (e) {
+    const s = await fetch("data/snapshot.json").then(r => r.json());
+    return { months: s.months, live: false, fetched: s.fetched_at };
+  }
+}
+
+async function load() {
+  const { months, live, fetched } = await getSeries();
+  const byM = Object.fromEntries(months.map(m => [m.month, m]));
+  const base = byM[BET.baselineMonth], latest = months[months.length - 1];
+  const decided = byM[BET.decideMonth];
+  const now = decided || latest;
+  const delta = now.share_mobile - base.share_mobile;
+  const chrisLine = base.share_mobile + BET.chrisWinsBelow, danLine = base.share_mobile + BET.danWinsAbove;
+  const peak = months.reduce((a, b) => b.share_mobile > a.share_mobile ? b : a);
+  const yearBefore = byM[new Date(new Date(BET.baselineMonth).setFullYear(new Date(BET.baselineMonth).getFullYear() - 1)).toISOString().slice(0, 10)];
+
+  $("termsline").innerHTML = `<b>The terms.</b> Baseline: the ${fmtM(BET.baselineMonth)} crawl, <b>${pct(base.share_mobile)}</b>. The deciding figure is the
+    ${fmtM(BET.decideMonth)} crawl. If it has fallen by less than ${Math.abs(BET.danWinsAbove).toFixed(1)} points (above <b>${pct(danLine)}</b>), Dan wins.
+    If it has fallen by more than ${Math.abs(BET.chrisWinsBelow).toFixed(1)} points (below <b>${pct(chrisLine)}</b>), Chris wins. In between is a draw.
+    Dan has said that a fall of more than 2 points would make him concede the decline is accelerating.`;
+  $("status").textContent = BET.status;
+  const days = Math.max(0, Math.ceil((new Date(BET.decideDate) - Date.now()) / 864e5));
+  $("days").textContent = days; $("decideLabel").textContent = fmtM(BET.decideMonth); $("decideDate").textContent = fmtD(BET.decideDate);
+
+  $("latestTag").textContent = (decided ? "THE DECIDING FIGURE · " : "LATEST MONTHLY FIGURE · ") + fmtM(now.month).toUpperCase() + (live ? "" : " · FROM SNAPSHOT");
+  $("nowV").textContent = pct(now.share_mobile);
+  $("nowV").style.color = delta < BET.chrisWinsBelow ? "var(--red)" : delta > BET.danWinsAbove ? "var(--blue)" : "var(--accent)";
+  $("delta").textContent = pts(delta); $("baseV").textContent = pct(base.share_mobile); $("baseM").textContent = fmtM(base.month);
+  $("lblChris").textContent = "Chris wins below " + pct(chrisLine); $("lblDan").textContent = "Dan wins above " + pct(danLine);
+
+  // scale from chrisLine-1 to danLine+1
+  const lo = chrisLine - 1, hi = danLine + 1, X = v => Math.min(100, Math.max(0, (v - lo) / (hi - lo) * 100));
+  $("scale").innerHTML = `<div class="seg chris" style="width:${X(chrisLine)}%"></div><div class="seg draw" style="width:${X(danLine) - X(chrisLine)}%"></div>
+    <div class="seg dan" style="flex:1"></div><div class="marker" style="left:${X(now.share_mobile)}%"></div>`;
+  const zone = delta < BET.chrisWinsBelow ? "Chris's zone" : delta > BET.danWinsAbove ? "Dan's zone" : "the draw band";
+  $("verdict").innerHTML = decided
+    ? `<b>Decided.</b> The ${fmtM(now.month)} figure landed in ${zone}.`
+    : `Today's figure sits in <b>${zone}</b>. ${months.length - months.indexOf(now) - 1 === 0 ? "" : ""}Twelve monthly readings to go; the one that counts is ${fmtM(BET.decideMonth)}.`;
+
+  $("peakV").innerHTML = pct(peak.share_mobile) + ` <small>${fmtM(peak.month)}</small>`;
+  $("priorFall").innerHTML = yearBefore ? pts(base.share_mobile - yearBefore.share_mobile) + ` <small>${fmtM(yearBefore.month)} to ${fmtM(base.month)}</small>` : "—";
+  $("needChris").innerHTML = `more than ${Math.abs(BET.chrisWinsBelow).toFixed(1)} pts <small>${pts(BET.chrisWinsBelow - delta)} from today</small>`;
+  $("deskV").textContent = pct(now.share_desktop);
+  $("snapDate").textContent = fetched ? "taken " + fmtD(fetched) : "live data loaded";
+
+  $("tbl").innerHTML = "<tr><th>Month</th><th>WordPress origins</th><th>All origins</th><th>Share (mobile)</th><th>Share (desktop)</th></tr>" +
+    [...months].reverse().map(m => `<tr><td>${fmtM(m.month)}</td><td>${(m.wp_mobile || 0).toLocaleString("en-GB")}</td><td>${(m.all_mobile || 0).toLocaleString("en-GB")}</td><td>${pct(m.share_mobile)}</td><td>${pct(m.share_desktop)}</td></tr>`).join("");
+
+  drawChart(months.filter(m => m.month >= "2021-01-01"), base, now, peak, chrisLine, danLine);
+}
+
+function drawChart(series, base, now, peak, chrisLine, danLine) {
+  const W = 920, H = 360, L = 58, R = 16, T = 22, B = 40;
+  const t0 = new Date(series[0].month).getTime(), t1 = new Date(BET.decideMonth).getTime();
+  const vals = series.map(p => p.share_mobile);
+  const vMin = Math.floor(Math.min(chrisLine, ...vals) - 1), vMax = Math.ceil(Math.max(...vals) + 0.5);
+  const X = t => L + (W - L - R) * (t - t0) / (t1 - t0);
+  const Y = v => T + (H - T - B) * (1 - (v - vMin) / (vMax - vMin));
+  const xb = X(new Date(base.month).getTime()), xe = X(t1);
+  let grid = "", labels = "";
+  for (let v = vMin; v <= vMax; v += 1) {
+    grid += `<line x1="${L}" y1="${Y(v)}" x2="${W - R}" y2="${Y(v)}" stroke="#1c2434"/>`;
+    labels += `<text x="${L - 8}" y="${Y(v) + 4}" fill="#66718a" font-size="11" text-anchor="end">${v}%</text>`;
+  }
+  for (let d = new Date(t0); d.getTime() <= t1; d.setMonth(d.getMonth() + 6)) {
+    labels += `<text x="${X(d.getTime())}" y="${H - 14}" fill="#66718a" font-size="11" text-anchor="middle">${d.toLocaleDateString("en-GB", { month: "short", year: "2-digit" })}</text>`;
+  }
+  const path = series.map((p, i) => (i ? "L" : "M") + X(new Date(p.month).getTime()).toFixed(1) + "," + Y(p.share_mobile).toFixed(1)).join("");
+  const xp = X(new Date(peak.month).getTime()), xn = X(new Date(now.month).getTime());
+  $("chart").innerHTML = `
+  <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto" id="svg">
+    ${grid}${labels}
+    <rect x="${xb}" y="${T}" width="${xe - xb}" height="${Y(danLine) - T}" fill="#6aa6ff" opacity="0.07"/>
+    <rect x="${xb}" y="${Y(danLine)}" width="${xe - xb}" height="${Y(chrisLine) - Y(danLine)}" fill="#ffd94a" opacity="0.06"/>
+    <rect x="${xb}" y="${Y(chrisLine)}" width="${xe - xb}" height="${H - B - Y(chrisLine)}" fill="#ff5d5d" opacity="0.08"/>
+    <line x1="${xb}" y1="${Y(danLine)}" x2="${xe}" y2="${Y(danLine)}" stroke="#6aa6ff" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <line x1="${xb}" y1="${Y(chrisLine)}" x2="${xe}" y2="${Y(chrisLine)}" stroke="#ff5d5d" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="${xe - 6}" y="${Y(danLine) - 7}" fill="#6aa6ff" font-size="12" text-anchor="end">Dan wins above ${pct(danLine)}</text>
+    <text x="${xe - 6}" y="${Y(chrisLine) + 16}" fill="#ff5d5d" font-size="12" text-anchor="end">Chris wins below ${pct(chrisLine)}</text>
+    <line x1="${xb}" y1="${T}" x2="${xb}" y2="${H - B}" stroke="#8b96ab" stroke-dasharray="3 4"/>
+    <text x="${xb + 5}" y="${T + 12}" fill="#8b96ab" font-size="11.5">bet baseline · ${fmtM(base.month)}</text>
+    <path d="${path}" fill="none" stroke="#ffd94a" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="${xp}" cy="${Y(peak.share_mobile)}" r="5" fill="#ffd94a"/>
+    <text x="${xp}" y="${Y(peak.share_mobile) - 11}" fill="#ffd94a" font-size="12" text-anchor="middle">peak ${pct(peak.share_mobile)} · ${fmtM(peak.month)}</text>
+    <circle cx="${xn}" cy="${Y(now.share_mobile)}" r="5" fill="#ff5d5d"/>
+    <text x="${xn - 9}" y="${Y(now.share_mobile) + 4}" fill="#ff5d5d" font-size="12" text-anchor="end">${fmtM(now.month)} · ${pct(now.share_mobile)}</text>
+    <line id="cross" x1="0" y1="${T}" x2="0" y2="${H - B}" stroke="#e8ecf4" stroke-width="1" opacity="0"/>
+    <circle id="dot" cx="0" cy="0" r="6" fill="#0b0e14" stroke="#ffd94a" stroke-width="2" opacity="0"/>
+    <rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" id="hit"/>
+  </svg>`;
+  const svg = $("svg"), tip = $("tip"), cross = $("cross"), dot = $("dot");
+  const xs = series.map(p => X(new Date(p.month).getTime()));
+  $("hit").addEventListener("mousemove", e => {
+    const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+    const m = pt.matrixTransform(svg.getScreenCTM().inverse());
+    let i = 0; for (let k = 1; k < xs.length; k++) if (Math.abs(xs[k] - m.x) < Math.abs(xs[i] - m.x)) i = k;
+    const p = series[i];
+    cross.setAttribute("x1", xs[i]); cross.setAttribute("x2", xs[i]); cross.setAttribute("opacity", .35);
+    dot.setAttribute("cx", xs[i]); dot.setAttribute("cy", Y(p.share_mobile)); dot.setAttribute("opacity", 1);
+    tip.style.display = "block";
+    const box = $("chart").getBoundingClientRect();
+    tip.style.left = Math.min(box.width - 190, (e.clientX - box.left) + 14) + "px"; tip.style.top = (e.clientY - box.top - 40) + "px";
+    tip.innerHTML = `${fmtM(p.month)}<br><b>${pct(p.share_mobile)}</b> of ${(p.all_mobile || 0).toLocaleString("en-GB")} origins`;
+  });
+  $("hit").addEventListener("mouseleave", () => { tip.style.display = "none"; cross.setAttribute("opacity", 0); dot.setAttribute("opacity", 0); });
+}
+load();
+</script>
+</body>
+</html>

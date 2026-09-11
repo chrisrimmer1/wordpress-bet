@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.chrisrimmer.wordpress-bet-refresh</string>
+  <key>ProgramArguments</key>
+  <array><string>/bin/zsh</string><string>/Users/chrisrimmer/python_projects/wordpress-bet/scripts/refresh.sh</string></array>
+  <key>EnvironmentVariables</key>
+  <dict><key>NETLIFY_SITE_ID</key><string>e9491dc7-ca73-4455-893c-6268f004c683</string></dict>
+  <key>StartCalendarInterval</key>
+  <dict><key>Day</key><integer>20</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardOutPath</key><string>/Users/chrisrimmer/Library/Logs/wordpress-bet-refresh.log</string>
+  <key>StandardErrorPath</key><string>/Users/chrisrimmer/Library/Logs/wordpress-bet-refresh.log</string>
+</dict>
+</plist>

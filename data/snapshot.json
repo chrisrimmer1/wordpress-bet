@@ -1,0 +1,727 @@
+{
+ "fetched_at": "2026-09-11T11:26:36+00:00",
+ "source": "https://cdn.httparchive.org/v1/adoption (HTTP Archive Technology Report, CrUX origins)",
+ "latest_month": "2026-08-01",
+ "months": [
+  {
+   "month": "2020-01-01",
+   "wp_mobile": 1036502,
+   "all_mobile": 3402638,
+   "wp_desktop": 890004,
+   "all_desktop": 2976169,
+   "share_mobile": 30.46,
+   "share_desktop": 29.9
+  },
+  {
+   "month": "2020-02-01",
+   "wp_mobile": 1253230,
+   "all_mobile": 4045661,
+   "wp_desktop": 1007825,
+   "all_desktop": 3343928,
+   "share_mobile": 30.98,
+   "share_desktop": 30.14
+  },
+  {
+   "month": "2020-03-01",
+   "wp_mobile": 1245913,
+   "all_mobile": 3998192,
+   "wp_desktop": 1055431,
+   "all_desktop": 3451653,
+   "share_mobile": 31.16,
+   "share_desktop": 30.58
+  },
+  {
+   "month": "2020-04-01",
+   "wp_mobile": 1258388,
+   "all_mobile": 4137654,
+   "wp_desktop": 1097226,
+   "all_desktop": 3695618,
+   "share_mobile": 30.41,
+   "share_desktop": 29.69
+  },
+  {
+   "month": "2020-05-01",
+   "wp_mobile": 1310828,
+   "all_mobile": 4306018,
+   "wp_desktop": 1158985,
+   "all_desktop": 3905280,
+   "share_mobile": 30.44,
+   "share_desktop": 29.68
+  },
+  {
+   "month": "2020-06-01",
+   "wp_mobile": 1425656,
+   "all_mobile": 4614197,
+   "wp_desktop": 1257570,
+   "all_desktop": 4167474,
+   "share_mobile": 30.9,
+   "share_desktop": 30.18
+  },
+  {
+   "month": "2020-07-01",
+   "wp_mobile": 1582417,
+   "all_mobile": 5009049,
+   "wp_desktop": 1370786,
+   "all_desktop": 4439616,
+   "share_mobile": 31.59,
+   "share_desktop": 30.88
+  },
+  {
+   "month": "2020-08-01",
+   "wp_mobile": 1542418,
+   "all_mobile": 4876268,
+   "wp_desktop": 1436600,
+   "all_desktop": 4601844,
+   "share_mobile": 31.63,
+   "share_desktop": 31.22
+  },
+  {
+   "month": "2020-09-01",
+   "wp_mobile": 1741594,
+   "all_mobile": 5401809,
+   "wp_desktop": 1454287,
+   "all_desktop": 4624946,
+   "share_mobile": 32.24,
+   "share_desktop": 31.44
+  },
+  {
+   "month": "2020-10-01",
+   "wp_mobile": 1768431,
+   "all_mobile": 5437162,
+   "wp_desktop": 1482522,
+   "all_desktop": 4683651,
+   "share_mobile": 32.52,
+   "share_desktop": 31.65
+  },
+  {
+   "month": "2020-11-01",
+   "wp_mobile": 1659411,
+   "all_mobile": 5135063,
+   "wp_desktop": 1550805,
+   "all_desktop": 4911896,
+   "share_mobile": 32.32,
+   "share_desktop": 31.57
+  },
+  {
+   "month": "2020-12-01",
+   "wp_mobile": 1751321,
+   "all_mobile": 5401061,
+   "wp_desktop": 1509424,
+   "all_desktop": 4780344,
+   "share_mobile": 32.43,
+   "share_desktop": 31.58
+  },
+  {
+   "month": "2021-01-01",
+   "wp_mobile": 1836831,
+   "all_mobile": 5704102,
+   "wp_desktop": 1650752,
+   "all_desktop": 5148521,
+   "share_mobile": 32.2,
+   "share_desktop": 32.06
+  },
+  {
+   "month": "2021-02-01",
+   "wp_mobile": 1803729,
+   "all_mobile": 5493297,
+   "wp_desktop": 1568498,
+   "all_desktop": 4936789,
+   "share_mobile": 32.84,
+   "share_desktop": 31.77
+  },
+  {
+   "month": "2021-03-01",
+   "wp_mobile": 1924142,
+   "all_mobile": 5817044,
+   "wp_desktop": 1711792,
+   "all_desktop": 5296825,
+   "share_mobile": 33.08,
+   "share_desktop": 32.32
+  },
+  {
+   "month": "2021-04-01",
+   "wp_mobile": 1866030,
+   "all_mobile": 5618750,
+   "wp_desktop": 1663748,
+   "all_desktop": 5131859,
+   "share_mobile": 33.21,
+   "share_desktop": 32.42
+  },
+  {
+   "month": "2021-05-01",
+   "wp_mobile": 1967985,
+   "all_mobile": 5869659,
+   "wp_desktop": 1731009,
+   "all_desktop": 5298210,
+   "share_mobile": 33.53,
+   "share_desktop": 32.67
+  },
+  {
+   "month": "2021-06-01",
+   "wp_mobile": 1960618,
+   "all_mobile": 5857374,
+   "wp_desktop": 1691945,
+   "all_desktop": 5185547,
+   "share_mobile": 33.47,
+   "share_desktop": 32.63
+  },
+  {
+   "month": "2021-07-01",
+   "wp_mobile": 1926949,
+   "all_mobile": 5755232,
+   "wp_desktop": 1582861,
+   "all_desktop": 4871973,
+   "share_mobile": 33.48,
+   "share_desktop": 32.49
+  },
+  {
+   "month": "2021-08-01",
+   "wp_mobile": 1879344,
+   "all_mobile": 5635003,
+   "wp_desktop": 1559972,
+   "all_desktop": 4823255,
+   "share_mobile": 33.35,
+   "share_desktop": 32.34
+  },
+  {
+   "month": "2021-09-01",
+   "wp_mobile": 1981338,
+   "all_mobile": 5936574,
+   "wp_desktop": 1529707,
+   "all_desktop": 4739412,
+   "share_mobile": 33.38,
+   "share_desktop": 32.28
+  },
+  {
+   "month": "2021-10-01",
+   "wp_mobile": 2015804,
+   "all_mobile": 6053743,
+   "wp_desktop": 1516368,
+   "all_desktop": 4727380,
+   "share_mobile": 33.3,
+   "share_desktop": 32.08
+  },
+  {
+   "month": "2021-11-01",
+   "wp_mobile": 2078350,
+   "all_mobile": 6219387,
+   "wp_desktop": 1575937,
+   "all_desktop": 4883678,
+   "share_mobile": 33.42,
+   "share_desktop": 32.27
+  },
+  {
+   "month": "2021-12-01",
+   "wp_mobile": 2022071,
+   "all_mobile": 6091869,
+   "wp_desktop": 1460590,
+   "all_desktop": 4592437,
+   "share_mobile": 33.19,
+   "share_desktop": 31.8
+  },
+  {
+   "month": "2022-01-01",
+   "wp_mobile": 2134548,
+   "all_mobile": 6354932,
+   "wp_desktop": 1581786,
+   "all_desktop": 4874305,
+   "share_mobile": 33.59,
+   "share_desktop": 32.45
+  },
+  {
+   "month": "2022-02-01",
+   "wp_mobile": 2088574,
+   "all_mobile": 6229781,
+   "wp_desktop": 1464215,
+   "all_desktop": 4592935,
+   "share_mobile": 33.53,
+   "share_desktop": 31.88
+  },
+  {
+   "month": "2022-03-01",
+   "wp_mobile": 2190244,
+   "all_mobile": 6416511,
+   "wp_desktop": 1575946,
+   "all_desktop": 4821316,
+   "share_mobile": 34.13,
+   "share_desktop": 32.69
+  },
+  {
+   "month": "2022-04-01",
+   "wp_mobile": 2149028,
+   "all_mobile": 6508241,
+   "wp_desktop": 1506678,
+   "all_desktop": 4808522,
+   "share_mobile": 33.02,
+   "share_desktop": 31.33
+  },
+  {
+   "month": "2022-05-01",
+   "wp_mobile": 2361823,
+   "all_mobile": 6754899,
+   "wp_desktop": 1595824,
+   "all_desktop": 4799633,
+   "share_mobile": 34.96,
+   "share_desktop": 33.25
+  },
+  {
+   "month": "2022-06-01",
+   "wp_mobile": 2354474,
+   "all_mobile": 6694727,
+   "wp_desktop": 1504507,
+   "all_desktop": 4540052,
+   "share_mobile": 35.17,
+   "share_desktop": 33.14
+  },
+  {
+   "month": "2022-07-01",
+   "wp_mobile": 2737835,
+   "all_mobile": 7657146,
+   "wp_desktop": 1509732,
+   "all_desktop": 4553230,
+   "share_mobile": 35.76,
+   "share_desktop": 33.16
+  },
+  {
+   "month": "2022-08-01",
+   "wp_mobile": 3329411,
+   "all_mobile": 9460576,
+   "wp_desktop": 1613351,
+   "all_desktop": 5071769,
+   "share_mobile": 35.19,
+   "share_desktop": 31.81
+  },
+  {
+   "month": "2022-09-01",
+   "wp_mobile": 3293931,
+   "all_mobile": 9391368,
+   "wp_desktop": 1875167,
+   "all_desktop": 5740607,
+   "share_mobile": 35.07,
+   "share_desktop": 32.66
+  },
+  {
+   "month": "2022-10-01",
+   "wp_mobile": 3265784,
+   "all_mobile": 9326916,
+   "wp_desktop": 1923622,
+   "all_desktop": 5887152,
+   "share_mobile": 35.01,
+   "share_desktop": 32.67
+  },
+  {
+   "month": "2022-11-01",
+   "wp_mobile": 3258244,
+   "all_mobile": 9344044,
+   "wp_desktop": 2097849,
+   "all_desktop": 6376853,
+   "share_mobile": 34.87,
+   "share_desktop": 32.9
+  },
+  {
+   "month": "2022-12-01",
+   "wp_mobile": 3167034,
+   "all_mobile": 9110962,
+   "wp_desktop": 1902201,
+   "all_desktop": 5898687,
+   "share_mobile": 34.76,
+   "share_desktop": 32.25
+  },
+  {
+   "month": "2023-01-01",
+   "wp_mobile": 3402621,
+   "all_mobile": 9686820,
+   "wp_desktop": 2182854,
+   "all_desktop": 6565601,
+   "share_mobile": 35.13,
+   "share_desktop": 33.25
+  },
+  {
+   "month": "2023-02-01",
+   "wp_mobile": 3356751,
+   "all_mobile": 9571773,
+   "wp_desktop": 2128782,
+   "all_desktop": 6439956,
+   "share_mobile": 35.07,
+   "share_desktop": 33.06
+  },
+  {
+   "month": "2023-03-01",
+   "wp_mobile": 3414639,
+   "all_mobile": 9731427,
+   "wp_desktop": 2208425,
+   "all_desktop": 6649238,
+   "share_mobile": 35.09,
+   "share_desktop": 33.21
+  },
+  {
+   "month": "2023-04-01",
+   "wp_mobile": 3345771,
+   "all_mobile": 9524457,
+   "wp_desktop": 2113625,
+   "all_desktop": 6420914,
+   "share_mobile": 35.13,
+   "share_desktop": 32.92
+  },
+  {
+   "month": "2023-05-01",
+   "wp_mobile": 3451290,
+   "all_mobile": 9923266,
+   "wp_desktop": 2163158,
+   "all_desktop": 6595951,
+   "share_mobile": 34.78,
+   "share_desktop": 32.8
+  },
+  {
+   "month": "2023-06-01",
+   "wp_mobile": 3437656,
+   "all_mobile": 9870956,
+   "wp_desktop": 2108902,
+   "all_desktop": 6432856,
+   "share_mobile": 34.83,
+   "share_desktop": 32.78
+  },
+  {
+   "month": "2023-07-01",
+   "wp_mobile": 3422903,
+   "all_mobile": 9843848,
+   "wp_desktop": 2040628,
+   "all_desktop": 6268246,
+   "share_mobile": 34.77,
+   "share_desktop": 32.56
+  },
+  {
+   "month": "2023-08-01",
+   "wp_mobile": 3471900,
+   "all_mobile": 9995604,
+   "wp_desktop": 2032706,
+   "all_desktop": 6273212,
+   "share_mobile": 34.73,
+   "share_desktop": 32.4
+  },
+  {
+   "month": "2023-09-01",
+   "wp_mobile": 3449912,
+   "all_mobile": 9992628,
+   "wp_desktop": 2129329,
+   "all_desktop": 6542916,
+   "share_mobile": 34.52,
+   "share_desktop": 32.54
+  },
+  {
+   "month": "2023-10-01",
+   "wp_mobile": 3402560,
+   "all_mobile": 9866461,
+   "wp_desktop": 2183530,
+   "all_desktop": 6699332,
+   "share_mobile": 34.49,
+   "share_desktop": 32.59
+  },
+  {
+   "month": "2023-11-01",
+   "wp_mobile": 3384527,
+   "all_mobile": 9869804,
+   "wp_desktop": 2213404,
+   "all_desktop": 6804526,
+   "share_mobile": 34.29,
+   "share_desktop": 32.53
+  },
+  {
+   "month": "2023-12-01",
+   "wp_mobile": 3185074,
+   "all_mobile": 9221518,
+   "wp_desktop": 1944314,
+   "all_desktop": 5996247,
+   "share_mobile": 34.54,
+   "share_desktop": 32.43
+  },
+  {
+   "month": "2024-01-01",
+   "wp_mobile": 3326313,
+   "all_mobile": 9538022,
+   "wp_desktop": 2162486,
+   "all_desktop": 6492832,
+   "share_mobile": 34.87,
+   "share_desktop": 33.31
+  },
+  {
+   "month": "2024-02-01",
+   "wp_mobile": 3358631,
+   "all_mobile": 9588322,
+   "wp_desktop": 2237377,
+   "all_desktop": 6664989,
+   "share_mobile": 35.03,
+   "share_desktop": 33.57
+  },
+  {
+   "month": "2024-03-01",
+   "wp_mobile": 3322280,
+   "all_mobile": 9511401,
+   "wp_desktop": 2206432,
+   "all_desktop": 6616349,
+   "share_mobile": 34.93,
+   "share_desktop": 33.35
+  },
+  {
+   "month": "2024-04-01",
+   "wp_mobile": 3342866,
+   "all_mobile": 9565611,
+   "wp_desktop": 2197382,
+   "all_desktop": 6598132,
+   "share_mobile": 34.95,
+   "share_desktop": 33.3
+  },
+  {
+   "month": "2024-05-01",
+   "wp_mobile": 3323088,
+   "all_mobile": 9511917,
+   "wp_desktop": 2155144,
+   "all_desktop": 6487173,
+   "share_mobile": 34.94,
+   "share_desktop": 33.22
+  },
+  {
+   "month": "2024-06-01",
+   "wp_mobile": 3290801,
+   "all_mobile": 9430144,
+   "wp_desktop": 2093814,
+   "all_desktop": 6313364,
+   "share_mobile": 34.9,
+   "share_desktop": 33.16
+  },
+  {
+   "month": "2024-07-01",
+   "wp_mobile": 3278997,
+   "all_mobile": 9403836,
+   "wp_desktop": 1991730,
+   "all_desktop": 6050301,
+   "share_mobile": 34.87,
+   "share_desktop": 32.92
+  },
+  {
+   "month": "2024-08-01",
+   "wp_mobile": 3204278,
+   "all_mobile": 9506400,
+   "wp_desktop": 1988896,
+   "all_desktop": 6067680,
+   "share_mobile": 33.71,
+   "share_desktop": 32.78
+  },
+  {
+   "month": "2024-09-01",
+   "wp_mobile": 3333016,
+   "all_mobile": 9556291,
+   "wp_desktop": 2125949,
+   "all_desktop": 6404955,
+   "share_mobile": 34.88,
+   "share_desktop": 33.19
+  },
+  {
+   "month": "2024-10-01",
+   "wp_mobile": 3319174,
+   "all_mobile": 9546477,
+   "wp_desktop": 2173266,
+   "all_desktop": 6532647,
+   "share_mobile": 34.77,
+   "share_desktop": 33.27
+  },
+  {
+   "month": "2024-11-01",
+   "wp_mobile": 3222201,
+   "all_mobile": 9363536,
+   "wp_desktop": 2151633,
+   "all_desktop": 6527203,
+   "share_mobile": 34.41,
+   "share_desktop": 32.96
+  },
+  {
+   "month": "2024-12-01",
+   "wp_mobile": 3010466,
+   "all_mobile": 8858847,
+   "wp_desktop": 1866694,
+   "all_desktop": 5858941,
+   "share_mobile": 33.98,
+   "share_desktop": 31.86
+  },
+  {
+   "month": "2025-01-01",
+   "wp_mobile": 3150225,
+   "all_mobile": 9165719,
+   "wp_desktop": 2109836,
+   "all_desktop": 6392508,
+   "share_mobile": 34.37,
+   "share_desktop": 33.0
+  },
+  {
+   "month": "2025-02-01",
+   "wp_mobile": 3200541,
+   "all_mobile": 9334743,
+   "wp_desktop": 2213218,
+   "all_desktop": 6683555,
+   "share_mobile": 34.29,
+   "share_desktop": 33.11
+  },
+  {
+   "month": "2025-03-01",
+   "wp_mobile": 3131142,
+   "all_mobile": 9131193,
+   "wp_desktop": 2177515,
+   "all_desktop": 6602106,
+   "share_mobile": 34.29,
+   "share_desktop": 32.98
+  },
+  {
+   "month": "2025-04-01",
+   "wp_mobile": 3076093,
+   "all_mobile": 9010588,
+   "wp_desktop": 2069780,
+   "all_desktop": 6356273,
+   "share_mobile": 34.14,
+   "share_desktop": 32.56
+  },
+  {
+   "month": "2025-05-01",
+   "wp_mobile": 3071911,
+   "all_mobile": 9010740,
+   "wp_desktop": 2080516,
+   "all_desktop": 6364047,
+   "share_mobile": 34.09,
+   "share_desktop": 32.69
+  },
+  {
+   "month": "2025-06-01",
+   "wp_mobile": 3033727,
+   "all_mobile": 8894630,
+   "wp_desktop": 1966411,
+   "all_desktop": 6048787,
+   "share_mobile": 34.11,
+   "share_desktop": 32.51
+  },
+  {
+   "month": "2025-07-01",
+   "wp_mobile": 3087534,
+   "all_mobile": 9047039,
+   "wp_desktop": 1907582,
+   "all_desktop": 5905653,
+   "share_mobile": 34.13,
+   "share_desktop": 32.3
+  },
+  {
+   "month": "2025-08-01",
+   "wp_mobile": 3182359,
+   "all_mobile": 9297415,
+   "wp_desktop": 1887517,
+   "all_desktop": 5876485,
+   "share_mobile": 34.23,
+   "share_desktop": 32.12
+  },
+  {
+   "month": "2025-09-01",
+   "wp_mobile": 3163026,
+   "all_mobile": 9235862,
+   "wp_desktop": 1974904,
+   "all_desktop": 6098426,
+   "share_mobile": 34.25,
+   "share_desktop": 32.38
+  },
+  {
+   "month": "2025-10-01",
+   "wp_mobile": 3108283,
+   "all_mobile": 9085958,
+   "wp_desktop": 1990102,
+   "all_desktop": 6133574,
+   "share_mobile": 34.21,
+   "share_desktop": 32.45
+  },
+  {
+   "month": "2025-11-01",
+   "wp_mobile": 3065492,
+   "all_mobile": 9046274,
+   "wp_desktop": 1984686,
+   "all_desktop": 6162158,
+   "share_mobile": 33.89,
+   "share_desktop": 32.21
+  },
+  {
+   "month": "2025-12-01",
+   "wp_mobile": 2882654,
+   "all_mobile": 8635435,
+   "wp_desktop": 1680921,
+   "all_desktop": 5448573,
+   "share_mobile": 33.38,
+   "share_desktop": 30.85
+  },
+  {
+   "month": "2026-01-01",
+   "wp_mobile": 2979049,
+   "all_mobile": 8870684,
+   "wp_desktop": 1853866,
+   "all_desktop": 5913204,
+   "share_mobile": 33.58,
+   "share_desktop": 31.35
+  },
+  {
+   "month": "2026-02-01",
+   "wp_mobile": 3046471,
+   "all_mobile": 9086247,
+   "wp_desktop": 1958001,
+   "all_desktop": 6120303,
+   "share_mobile": 33.53,
+   "share_desktop": 31.99
+  },
+  {
+   "month": "2026-03-01",
+   "wp_mobile": 2972566,
+   "all_mobile": 8909023,
+   "wp_desktop": 1913065,
+   "all_desktop": 6030058,
+   "share_mobile": 33.37,
+   "share_desktop": 31.73
+  },
+  {
+   "month": "2026-04-01",
+   "wp_mobile": 2962844,
+   "all_mobile": 8922735,
+   "wp_desktop": 1859246,
+   "all_desktop": 5929595,
+   "share_mobile": 33.21,
+   "share_desktop": 31.36
+  },
+  {
+   "month": "2026-05-01",
+   "wp_mobile": 2932393,
+   "all_mobile": 8900835,
+   "wp_desktop": 1817040,
+   "all_desktop": 5833768,
+   "share_mobile": 32.95,
+   "share_desktop": 31.15
+  },
+  {
+   "month": "2026-06-01",
+   "wp_mobile": 2853655,
+   "all_mobile": 8826811,
+   "wp_desktop": 1717832,
+   "all_desktop": 5590307,
+   "share_mobile": 32.33,
+   "share_desktop": 30.73
+  },
+  {
+   "month": "2026-07-01",
+   "wp_mobile": 2819587,
+   "all_mobile": 8877469,
+   "wp_desktop": 1627116,
+   "all_desktop": 5386500,
+   "share_mobile": 31.76,
+   "share_desktop": 30.21
+  },
+  {
+   "month": "2026-08-01",
+   "wp_mobile": 2809159,
+   "all_mobile": 8900615,
+   "wp_desktop": 1594733,
+   "all_desktop": 5379682,
+   "share_mobile": 31.56,
+   "share_desktop": 29.64
+  }
+ ]
+}
