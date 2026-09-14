@@ -1,5 +1,7 @@
 # wordpress-bet: project memory
 
+Last updated: 14 September 2026
+
 ## What this is
 A one-page site memorialising a bet between Dan Wood (MD, Nettl of Fareham) and Chris, struck on
 11 September 2026: will WordPress's share of the web fall faster? Live at

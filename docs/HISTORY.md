@@ -1,5 +1,8 @@
 # History (newest first)
 
+## 2026-09-14: memory housekeeping
+Added the missing "Last updated" line to PROJECT_MEMORY.md (Project Memory Standard audit).
+
 ## 2026-09-11: terms agreed
 Dan agreed the re-based terms the same afternoon; status pill changed from "awaiting Dan" to
 "agreed" and redeployed.
